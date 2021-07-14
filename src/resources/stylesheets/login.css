@@ -7,7 +7,17 @@
     -fx-font-family: Serif;
 
 }
+.hyperlink{
+    -fx-border-color: transparent;
+}
 
+.hyperlink:hover{
+    -fx-underline: false;
+}
+
+.hyperlink:visited{
+    -fx-underline: false;
+}
 .button{
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 8px;
