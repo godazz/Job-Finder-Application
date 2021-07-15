@@ -4,15 +4,19 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import main.controllers.SceneController;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 750, 480));
+
+        SceneController.getInstance().Set("Login");
+
+        primaryStage.setTitle("Job Finder");
+        primaryStage.setScene(SceneController.getInstance().getScene());
         primaryStage.setResizable(false);
         primaryStage.show();
     }
