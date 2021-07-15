@@ -18,7 +18,7 @@
          <children>
             <ImageView fx:id="brandImageView" fitHeight="480.0" fitWidth="402.0" layoutX="-20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/intro.jpg" />
+                  <Image url="@../assets/brand.jpg" />
                </image>
             </ImageView>
          </children>

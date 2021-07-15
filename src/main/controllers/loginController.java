@@ -33,7 +33,7 @@ public class loginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File brandImageFile = new File("src/resources/assets/intro.jpg");
+        File brandImageFile = new File("src/resources/assets/brand.jpg");
         Image brandImage = new Image(brandImageFile.toURI().toString());
         brandImageView.setImage(brandImage);
     }
