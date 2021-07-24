@@ -21,5 +21,21 @@ public class user {
         return false;
     }
 
+    public static boolean isValid (String fname, String lname, String email, String password) throws SQLException {
+        DB.DBConnection.Connect();
+        Statement stmt = DBConnection.conn.createStatement();
+        String query = "SELECT Email FROM user";
+        ResultSet rs = stmt.executeQuery(query);
+
+
+        while(rs.next()){
+            if (email.equals(rs.getString("Email"))){
+                return false;
+            }
+        }
+        return fname.matches("[a-zA-z]+") && lname.matches("[a-zA-z]+") && email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+
+    }
+
 }
 
