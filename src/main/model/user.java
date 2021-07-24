@@ -1,6 +1,8 @@
 package main.model;
 
 import DB.DBConnection;
+import DB.DBOperations;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -8,10 +10,9 @@ import java.sql.Statement;
 public class user {
 
     public static boolean isValid(String email, String password) throws SQLException {
-        DB.DBConnection.Connect();
-        Statement stmt = DBConnection.conn.createStatement();
+
         String query = "SELECT Email, password, user_type FROM user";
-        ResultSet rs = stmt.executeQuery(query);
+        ResultSet rs = DBOperations.Read(query);
 
         while(rs.next()) {
            if (email.equals(rs.getString("Email")) && password.equals(rs.getString("Password"))){
@@ -22,11 +23,9 @@ public class user {
     }
 
     public static boolean isValid (String fname, String lname, String email, String password) throws SQLException {
-        DB.DBConnection.Connect();
-        Statement stmt = DBConnection.conn.createStatement();
-        String query = "SELECT Email FROM user";
-        ResultSet rs = stmt.executeQuery(query);
 
+        String query = "SELECT Email FROM user";
+        ResultSet rs = DBOperations.Read(query);
 
         while(rs.next()){
             if (email.equals(rs.getString("Email"))){
@@ -34,7 +33,6 @@ public class user {
             }
         }
         return fname.matches("[a-zA-z]+") && lname.matches("[a-zA-z]+") && email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
-
     }
 
 }
