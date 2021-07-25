@@ -45,11 +45,16 @@ public class SignupController {
                password = passwordTextField.getText();
 
         if (user.isValid(fname,lname,email,password)){
-            signupMessage.setText("Signed up successfully! you may log in now");
+            try {
+                user.Register(fname,lname,email,password);
+                signupMessage.setText("Signed up successfully! you may log in now");
+            }catch (Exception e){
+                signupMessage.setText("Sign up Failed!");
+                e.printStackTrace();
+            }
         }else {
             signupMessage.visibleProperty().set(true);
         }
     }
-    
 
 }

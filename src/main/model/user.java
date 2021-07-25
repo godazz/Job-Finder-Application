@@ -35,5 +35,13 @@ public class user {
         return fname.matches("[a-zA-z]+") && lname.matches("[a-zA-z]+") && email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
     }
 
+    public static void Register (String fname, String lname, String email, String password) throws SQLException {
+        String values = "( '" + email + "', '" + lname + "', '" + fname + "', '" + password + "', '" + "Seeker'" + ')';
+       // System.out.println(values);
+        String query = "insert into user (Email, Lname, Fname, Password, user_type) values " + values;
+        DBOperations.Create(query);
+
+    }
+
 }
 
