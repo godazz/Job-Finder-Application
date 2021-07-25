@@ -3,6 +3,7 @@ package main.controllers;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -27,6 +28,9 @@ public class LoginController implements Initializable {
     @FXML
     private Hyperlink signUp;
 
+    @FXML
+    private Label loginMessage;
+
     public void loginButtonAction() throws SQLException {
         String email = emailTextField.getText(),
                password = enterPasswordField.getText();
@@ -34,7 +38,7 @@ public class LoginController implements Initializable {
         if (user.isValid(email, password)) {
             System.out.println("Hello world Validated");
         } else {
-            System.out.println("Not Validated");
+            loginMessage.visibleProperty().set(true);
         }
 
     }
@@ -50,6 +54,7 @@ public class LoginController implements Initializable {
         File brandImageFile = new File("src/resources/assets/brand.jpg");
         Image brandImage = new Image(brandImageFile.toURI().toString());
         brandImageView.setImage(brandImage);
+        loginMessage.visibleProperty().set(false);
     }
 
 }

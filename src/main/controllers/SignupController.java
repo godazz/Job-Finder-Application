@@ -3,8 +3,10 @@ package main.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.TextAlignment;
 import main.model.user;
 
 import java.sql.SQLException;
@@ -26,6 +28,9 @@ public class SignupController {
     @FXML
     private Hyperlink Login;
 
+    @FXML
+    private Label signupMessage;
+
     public void loginAction() {
         Login.setOnMouseClicked(e -> {
             SceneController.getInstance().Set("Login");
@@ -40,9 +45,10 @@ public class SignupController {
                password = passwordTextField.getText();
 
         if (user.isValid(fname,lname,email,password)){
-            System.out.println("Validated");
+            signupMessage.setText("Signed up successfully! you may log in now");
+            signupMessage.setTextAlignment(TextAlignment.LEFT);
         }else {
-            System.out.println("Not Valid");
+            signupMessage.visibleProperty().set(true);
         }
     }
     
