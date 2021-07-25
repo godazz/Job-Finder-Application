@@ -46,7 +46,6 @@ public class SignupController {
 
         if (user.isValid(fname,lname,email,password)){
             signupMessage.setText("Signed up successfully! you may log in now");
-            signupMessage.setTextAlignment(TextAlignment.LEFT);
         }else {
             signupMessage.visibleProperty().set(true);
         }
