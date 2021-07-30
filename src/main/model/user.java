@@ -5,21 +5,22 @@ import DB.DBOperations;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.util.Pair;
 import java.sql.Statement;
 
 public class user {
 
-    public static boolean isValid(String email, String password) throws SQLException {
+    public static Pair<Boolean,String> isValid(String email, String password) throws SQLException {
 
         String query = "SELECT Email, password, user_type FROM user";
         ResultSet rs = DBOperations.Read(query);
 
         while(rs.next()) {
            if (email.equals(rs.getString("Email")) && password.equals(rs.getString("Password"))){
-               return true;
+               return new Pair <Boolean,String> (true, rs.getString("user_type"));
            }
         }
-        return false;
+        return new Pair <Boolean,String> (false, "");
     }
 
     public static boolean isValid (String fname, String lname, String email, String password) throws SQLException {

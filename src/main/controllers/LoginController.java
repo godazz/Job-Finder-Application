@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Pair;
 import main.model.user;
 import java.io.File;
 import java.net.URL;
@@ -34,9 +35,19 @@ public class LoginController implements Initializable {
     public void loginButtonAction() throws SQLException {
         String email = emailTextField.getText(),
                password = enterPasswordField.getText();
-
-        if (user.isValid(email, password)) {
-            System.out.println("Hello world Validated");
+        Pair<Boolean, String> p =  user.isValid(email, password);
+        if (p.getKey()) {
+            switch (p.getValue()){
+                case "Admin":
+                    System.out.println("Admin");
+                    break;
+                case "Poster":
+                    System.out.println("Poster");
+                    break;
+                case "Seeker":
+                    System.out.println("Seeker");
+                    break;
+            }
         } else {
             loginMessage.visibleProperty().set(true);
         }
