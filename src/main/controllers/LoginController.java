@@ -39,7 +39,7 @@ public class LoginController implements Initializable {
         if (p.getKey()) {
             switch (p.getValue()){
                 case "Admin":
-                    System.out.println("Admin");
+                    SceneController.getInstance().Set("AdminNavigation");
                     break;
                 case "Poster":
                     System.out.println("Poster");
