@@ -1,0 +1,27 @@
+.root{
+
+}
+.label{
+    -fx-font-weight: bold;
+    -fx-text-fill:white;
+    -fx-font-family: Serif;
+
+}
+.button{
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-background-radius: 8px;
+    -fx-background-color: white;
+    -fx-text-fill: #1A2E75;
+}
+.button:hover{
+    -fx-background-color: #c5c5c5;
+    -fx-cursor: hand;
+}
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+}
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
+}

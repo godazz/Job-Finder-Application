@@ -10,7 +10,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="480.0" prefWidth="500.0" stylesheets="@../stylesheets/login.css">
+      <AnchorPane prefHeight="480.0" prefWidth="500.0" stylesheets="@../stylesheets/Blue-Theme.css">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="72.0" prefHeight="50.0" prefWidth="302.0" text="Add Job Poster">
                <font>

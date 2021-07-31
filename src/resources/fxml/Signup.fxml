@@ -24,7 +24,7 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="480.0" prefWidth="373.0" stylesheets="@../stylesheets/login.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="480.0" prefWidth="373.0" stylesheets="@../stylesheets/Blue-Theme.css" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="35.0" layoutY="32.0" prefHeight="39.0" prefWidth="101.0" text="Signup" textAlignment="CENTER">
                <font>
