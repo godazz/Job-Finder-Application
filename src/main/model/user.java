@@ -10,22 +10,31 @@ import java.sql.Statement;
 
 public class user {
 
+
+    private static final String [] types  = new String[]{"Seeker", "Poster", "Admin"};
+
     public static Pair<Boolean,String> isValid(String email, String password) throws SQLException {
 
-        String query = "SELECT Email, password, user_type FROM user";
-        ResultSet rs = DBOperations.Read(query);
+        String query = "SELECT Email, Password FROM ";
+        ResultSet rs ;
 
-        while(rs.next()) {
-           if (email.equals(rs.getString("Email")) && password.equals(rs.getString("Password"))){
-               return new Pair <Boolean,String> (true, rs.getString("user_type"));
-           }
+        for (int i = 0 ; i<3 ; i++){
+
+            rs = DBOperations.Read(query + types[i]);
+
+            while(rs.next()) {
+                if (email.equals(rs.getString("Email")) && password.equals(rs.getString("Password"))){
+                    return new Pair <Boolean,String> (true, types[i]);
+                }
+            }
         }
-        return new Pair <Boolean,String> (false, "");
+
+        return new Pair <Boolean,String> (false, "Not a user");
     }
 
     public static boolean isValid (String fname, String lname, String email, String password) throws SQLException {
 
-        String query = "SELECT Email FROM user";
+        String query = "SELECT Email FROM Admin";
         ResultSet rs = DBOperations.Read(query);
 
         while(rs.next()){
