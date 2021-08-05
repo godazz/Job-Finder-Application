@@ -44,7 +44,7 @@ public class SignupController {
                email = emailTextField.getText(),
                password = passwordTextField.getText();
 
-        if (user.isValid(fname,lname,email,password)){
+        if (user.isValid(fname,lname,email)){
             try {
                 user.Register(fname,lname,email,password);
                 signupMessage.setText("Signed up successfully! you may log in now");

@@ -31,7 +31,7 @@ public class user {
         return new Pair <Boolean,String> (false, "Not a user");
     }
 
-    public static boolean isValid (String fname, String lname, String email, String password) throws SQLException {
+    public static boolean isValid (String fname, String lname, String email) throws SQLException {
 
         String query = "SELECT Email FROM ";
         ResultSet rs ;
