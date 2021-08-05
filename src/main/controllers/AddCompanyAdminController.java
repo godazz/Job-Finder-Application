@@ -1,6 +1,7 @@
 package main.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import main.model.user;
 
@@ -18,6 +19,9 @@ public class AddCompanyAdminController {
     @FXML
     TextField emailTextField;
 
+    @FXML
+    Label addStateMessage;
+
 
     @FXML
     void addButtonAction() throws SQLException {
@@ -27,11 +31,15 @@ public class AddCompanyAdminController {
                 email = emailTextField.getText();
 
         if (user.isValid(fname,lname,email)){
-            System.out.println("Valid");
+            addStateMessage.setText("Admin has been added successfully");
+            FnameTextField.clear();
+            LnameTextField.clear();
+            emailTextField.clear();
         }else {
-            System.out.println("Not Valid");
+            addStateMessage.setText("Incorrect name or email");
+            addStateMessage.visibleProperty().set(true);
         }
 
-
     }
+
 }
