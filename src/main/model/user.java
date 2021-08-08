@@ -1,12 +1,13 @@
 package main.model;
 
-
 import DB.DBOperations;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.util.Pair;
 
 public class user {
+
+    public static int loggedCompanyIDX;
 
 
     private static final String [] types  = new String[]{"Seeker", "Poster", "Admin"};
@@ -19,10 +20,15 @@ public class user {
 
         for (int i = 0 ; i<3 ; i++){
 
+            if (i >0){
+                query = "SELECT Email, Password, C_ID FROM ";
+            }
+
             rs = DBOperations.Read(query + types[i]);
 
             while(rs.next()) {
                 if (email.equals(rs.getString("Email")) && password.equals(rs.getString("Password"))){
+                    loggedCompanyIDX = rs.getInt("C_ID");
                     return new Pair <Boolean,String> (true, types[i]);
                 }
             }
@@ -55,7 +61,6 @@ public class user {
         //System.out.println(values);
         String query = "insert into seeker (Fname, Lname, Email, Password) values " + values;
         DBOperations.Create(query);
-
     }
 
 }

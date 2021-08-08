@@ -3,6 +3,7 @@ package main.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import main.model.Admin;
 import main.model.user;
 
 import java.sql.SQLException;
@@ -31,7 +32,9 @@ public class AddCompanyAdminController {
                 email = emailTextField.getText();
 
         if (user.isValid(fname,lname,email)){
+            Admin.addNewAdmin(fname,lname,email);
             addStateMessage.setText("Admin has been added successfully");
+            addStateMessage.visibleProperty().set(true);
             FnameTextField.clear();
             LnameTextField.clear();
             emailTextField.clear();
