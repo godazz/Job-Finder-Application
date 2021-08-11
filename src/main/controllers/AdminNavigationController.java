@@ -15,12 +15,12 @@ public class AdminNavigationController {
 
     @FXML
     void addJobPoster () throws IOException {
-        box.getChildren().set(1, (Node)FXMLLoader.load(getClass().getResource("/fxml/AddJobPoster.fxml")));
+        SceneController.setRightBox( box,"AddJobPoster");
     }
 
     @FXML
     void addCompanyAdmin () throws IOException {
-        box.getChildren().set(1, (Node)FXMLLoader.load(getClass().getResource("/fxml/AddCompanyAdmin.fxml")));
+        SceneController.setRightBox( box,"AddCompanyAdmin");
     }
 
 }
