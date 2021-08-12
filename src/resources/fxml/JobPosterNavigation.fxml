@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="box" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" stylesheets="@../stylesheets/Blue-Theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.AdminNavigationController">
+<HBox fx:id="box" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" stylesheets="@../stylesheets/Blue-Theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.JobPosterNavigationController">
     <children>
         <VBox prefHeight="400.0" prefWidth="250.0" style="-fx-background-color: #1A2E75;" stylesheets="@../stylesheets/White-Theme.css">
             <children>
@@ -19,7 +19,7 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                 </Label>
-                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="110.0" text="Add New Job" textAlignment="CENTER" wrapText="true">
+                <Button onAction='#postNewJob' alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="110.0" text="Post New Job" textAlignment="CENTER" wrapText="true">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -27,7 +27,7 @@
                         <Insets left="75.0" top="70.0" />
                     </VBox.margin>
                 </Button>
-                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="110.0" text="View Applications" textAlignment="CENTER" wrapText="true">
+                <Button onAction="#viewApplications" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="110.0" text="View Applications" textAlignment="CENTER" wrapText="true">
                     <font>
                         <Font size="16.0" />
                     </font>
