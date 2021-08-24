@@ -57,7 +57,7 @@ public class user {
     }
 
     public static void Register (String fname, String lname, String email, String password) throws SQLException {
-        String values = "( '" + fname + "', '" + lname + "', '" + email + "', '" + password + " ')" ;
+        String values = String.format("( '%s', '%s', '%s', 'password')", fname, lname, email);
         //System.out.println(values);
         String query = "insert into seeker (Fname, Lname, Email, Password) values " + values;
         DBOperations.Create(query);
