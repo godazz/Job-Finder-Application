@@ -45,7 +45,7 @@ public class LoginController implements Initializable {
                     SceneController.getInstance().Set("JobPosterNavigation");
                     break;
                 case "Seeker":
-                    System.out.println("Seeker");
+                    SceneController.getInstance().Set("JobSeekerNavigation");
                     break;
             }
         } else {
