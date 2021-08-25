@@ -20,7 +20,7 @@ public class user {
 
         for (int i = 0 ; i<3 ; i++){
 
-            if (i >0){
+            if (!types[i].equals("Seeker")){
                 query = "SELECT Email, Password, C_ID FROM ";
             }
 
@@ -28,7 +28,9 @@ public class user {
 
             while(rs.next()) {
                 if (email.equals(rs.getString("Email")) && password.equals(rs.getString("Password"))){
-                    loggedCompanyIDX = rs.getInt("C_ID");
+                    if (!types[i].equals("Seeker")) {
+                        loggedCompanyIDX = rs.getInt("C_ID");
+                    }
                     return new Pair <Boolean,String> (true, types[i]);
                 }
             }
