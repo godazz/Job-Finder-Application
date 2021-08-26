@@ -1,13 +1,15 @@
 package main.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import main.model.Company;
 import main.model.user;
-
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class CompanyInfoController {
+public class CompanyInfoController implements Initializable {
 
     @FXML
     Label companyName;
@@ -23,6 +25,15 @@ public class CompanyInfoController {
 
     @FXML
     Label companyHQ;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            modifyCompanyInformation();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
