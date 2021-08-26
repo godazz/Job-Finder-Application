@@ -14,7 +14,7 @@ public class JobSeekerNavigationController {
 
     @FXML
     void browseJobs () throws IOException {
-        SceneController.setRightBox( box,"tbd");
+        SceneController.setRightBox( box,"BrowseJobs");
     }
 
     void viewMyApplications () throws IOException {
