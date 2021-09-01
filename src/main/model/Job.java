@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Job {
 
-    String Title, Description, companyName;
-    int Salary;
+    private String Title, Description, companyName;
+    private int Salary;
 
     public Job(String Title, String Description, int Salary){
         this.Title = Title;

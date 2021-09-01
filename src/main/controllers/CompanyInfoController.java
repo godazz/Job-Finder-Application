@@ -29,7 +29,7 @@ public class CompanyInfoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            modifyCompanyInformation();
+            loadCompanyInformation();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -38,7 +38,7 @@ public class CompanyInfoController implements Initializable {
 
 
     @FXML
-    public void  modifyCompanyInformation () throws SQLException {
+    private void  loadCompanyInformation () throws SQLException {
 
         Company company = new Company();
         Company.fetch(user.loggedCompanyIDX,company);
