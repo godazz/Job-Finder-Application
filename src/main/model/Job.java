@@ -27,8 +27,7 @@ public class Job {
         return Title.matches("^[a-zA-Z ]*$") && Salary.matches("[0-9]+") && Description.matches("^[a-zA-Z ]*$");
     }
 
-    public static ArrayList<Job> fetch () throws SQLException {
-        ArrayList<Job> Jobs = new ArrayList<Job>();
+    public static void fetch(ArrayList<Job> jobs) throws SQLException {
         String query = "SELECT job.Title, job.Salary, job.Description, company.Name " +
                        "FROM job " +
                        "INNER JOIN company ON job.C_ID = company.ID";
@@ -42,10 +41,9 @@ public class Job {
             job.Description = rs.getString("Description");
             job.companyName = rs.getString("Name");
 
-            Jobs.add(job);
+            jobs.add(job);
         }
 
-        return Jobs;
     }
 
     public String getTitle() {
