@@ -26,7 +26,7 @@
                         <Font size="13.0" />
                     </font>
                 </Label>
-            <TableView fx:id="jobsTable" focusTraversable="false" layoutX="7.0" layoutY="85.0" prefHeight="282.0" prefWidth="486.0">
+            <TableView fx:id="jobsTable" focusTraversable="false" layoutX="7.0" layoutY="85.0" prefHeight="282.0" prefWidth="486.0" stylesheets="@../stylesheets/White-Theme.css">
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
